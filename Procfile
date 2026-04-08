@@ -1,0 +1,1 @@
+web: java -jar target/auth-1.0.0.jar
