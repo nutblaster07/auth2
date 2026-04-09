@@ -35,6 +35,7 @@ public class EmailService {
     }
 
     public void sendOtp(String toEmail, String otp, String purpose) {
+        System.out.println("SENDGRID KEY USED: " + sendGrid);
         try {
             String subject = purpose.equals("signup")
                     ? "Verify your email - " + fromName

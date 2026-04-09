@@ -1,4 +1,3 @@
-
 package com.abhishek.config;
 
 import com.sendgrid.SendGrid;
@@ -9,11 +8,11 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MailConfig {
 
-    @Value("${sendgrid.api.key}")
-    private String sendGridApiKey;
-
     @Bean
-    public SendGrid sendGrid() {
-        return new SendGrid(sendGridApiKey);
+    public SendGrid sendGrid(@Value("${sendgrid.api.key}") String apiKey) {
+
+        System.out.println("ACTUAL SENDGRID KEY: " + apiKey); // 🔥 MUST PRINT
+
+        return new SendGrid(apiKey);
     }
 }

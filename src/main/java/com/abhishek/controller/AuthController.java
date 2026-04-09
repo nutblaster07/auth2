@@ -176,7 +176,7 @@ public class AuthController {
     @PostMapping("/login/email/request")
     public ResponseEntity<Map<String, String>> requestEmailOtp(
             @Valid @RequestBody LoginRequestDto dto) {
-
+        System.out.println("EMAIL LOGIN API HIT");
         authService.requestEmailLoginOtp(dto.getTarget());
 
         return ResponseEntity.ok(Map.of(
